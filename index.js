@@ -13,7 +13,7 @@ const client = new Discord.Client({
 
 let bot = {
     client, 
-    prefix: "n.",
+    prefix: "?",
     owners: ["876194676292608060"]
 }
 
