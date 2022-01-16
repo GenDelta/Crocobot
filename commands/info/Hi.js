@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Hi",
+    name: "hi",
     category: "info",
     permissions: [],
     devOnly: false,
