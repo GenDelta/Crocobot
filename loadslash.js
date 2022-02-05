@@ -1,31 +1,34 @@
 const Discord = require("discord.js")
-
 require("dotenv").config()
 
 const client = new Discord.Client({
-    intents: ["GUILDS"]
+    intents: [
+        "GUILDS",
+        "GUILD_MESSAGES",
+        "GUILD_MEMBERS"
+    ]
 })
 
+client.slashcommands = new Discord.Collection()
+
 let bot = {
-    client
+    client,
 }
-
-
-
-const guildId = "876442504591966229"
-
-client.slashcommands = new Discord.Collection() 
 
 client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
 client.loadSlashCommands(bot, false)
 
+const guildId = "924832445050781766"
+
 client.on("ready", async () => {
+    console.log(`Loading ${client.slashcommands.size} slash commands`)
+
     const guild = client.guilds.cache.get(guildId)
     if (!guild)
-        return console.error("Target guild not found")
-    
+        console.error("Target Guild not found")
+
     await guild.commands.set([...client.slashcommands.values()])
-    console.log(`Successfully loaded in ${client.slashcommands.size} slash commands`)
+    console.log("Finished")
     process.exit(0)
 })
 
