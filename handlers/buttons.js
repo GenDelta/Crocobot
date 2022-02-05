@@ -7,7 +7,7 @@ const getFiles = (path, ending) => {
 module.exports = (bot, reload) => {
 	const { client } = bot
 
-	let buttons = getFiles("./buttons/", ".js")
+	let buttons = getFiles("../buttons/", ".js")
 
 	if (buttons.legnth === 0) {
 		console.log("No buttons to load")
