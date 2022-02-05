@@ -18,7 +18,7 @@ let bot = {
 client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
 client.loadSlashCommands(bot, false)
 
-const guildId = "924832445050781766"
+const guildId = "876442504591966229"
 
 client.on("ready", async () => {
     console.log(`Loading ${client.slashcommands.size} slash commands`)

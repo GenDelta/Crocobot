@@ -13,8 +13,8 @@ const client = new Discord.Client({
 
 let bot = {
     client, 
-    prefix: "n.",
-    owners: ["315850603396071424"]
+    prefix: "?",
+    owners: ["315850687619467629260806003396071424"]
 }
 
 client.commands = new Discord.Collection()
